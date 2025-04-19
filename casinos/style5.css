@@ -1,0 +1,337 @@
+
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    padding: 2rem;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #58a6ff;
+    text-align: left;
+    font-weight: normal;
+}
+
+.container {
+    max-width: 100%;
+    overflow-x: auto;
+    position: relative;
+}
+
+.copy-blocker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+table.display {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    background-color: #161b22;
+    color: #c9d1d9;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+table.display thead th {
+    background-color: #21262d;
+    color: #58a6ff;
+    padding: 8px 10px;
+    border: 1px solid #30363d;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+table.display tbody td {
+    padding: 8px 10px;
+    border: 1px solid #30363d;
+    vertical-align: top;
+}
+
+table.display tbody tr:nth-child(even) {
+    background-color: #1b1f27;
+}
+
+table.display tbody tr:hover {
+    background-color: #2b313c;
+}
+
+a {
+    color: #79c0ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.dataTables_length {
+    display: none;
+}
+
+.dataTables_filter input {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 5px;
+}
+
+tr.honeypot {
+    display: none !important;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #ff0077;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 8px;
+    box-shadow: 0 0 5px #ff0077;
+}
+
+/* Column width controls */
+table.display th:nth-child(1), table.display td:nth-child(1) { width: 180px; } /* Name */
+table.display th:nth-child(2), table.display td:nth-child(2) { width: 80px; }  /* Tier */
+table.display th:nth-child(3), table.display td:nth-child(3) { width: 120px; } /* Free Daily SC */
+table.display th:nth-child(4), table.display td:nth-child(4) { width: 120px; } /* Daily Amount */
+table.display th:nth-child(5), table.display td:nth-child(5) { min-width: 300px; } /* Notes */
+table.display th:nth-child(6), table.display td:nth-child(6) { width: 70px; }  /* Cash */
+table.display th:nth-child(7), table.display td:nth-child(7) { width: 80px; }  /* GiftCard */
+table.display th:nth-child(8), table.display td:nth-child(8) { width: 80px; }  /* Crypto */
+table.display th:nth-child(9), table.display td:nth-child(9) { width: 120px; } /* VIP */
+table.display th:nth-child(10), table.display td:nth-child(10) { width: 150px; } /* Farm VIP */
+table.display th:nth-child(11), table.display td:nth-child(11) { width: 150px; } /* Affiliation */
+table.display th:nth-child(12), table.display td:nth-child(12) { width: 100px; } /* Location */
+
+.grip {
+    background-color: #ccc;
+    width: 4px;
+    cursor: col-resize;
+    height: 100%;
+}
+.dragging .grip {
+    background-color: #ff0077;
+}
+
+
+/* S+ TIER - Blue with glow and pulsing */
+.tier-sp-blue {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #58a6ff;
+    text-shadow:
+        0 0 2px #58a6ff,
+        0 0 4px #58a6ff;
+    animation: spPulseBlue 2s ease-in-out infinite;
+    letter-spacing: 0.02em;
+}
+
+@keyframes spPulseBlue {
+    0%, 100% {
+        text-shadow:
+            0 0 2px #58a6ff,
+            0 0 4px #58a6ff;
+    }
+    50% {
+        text-shadow:
+            0 0 4px #79c0ff,
+            0 0 8px #79c0ff;
+    }
+}
+
+/* 👑 Crown - Jiggles quickly, rests long, no glow */
+.crown {
+    display: inline-block;
+    font-size: 1rem;
+    transform-origin: bottom center;
+    animation: crownJiggle 4.4s ease-in-out infinite;
+    color: #f5e9b0;
+    text-shadow: none;
+}
+
+@keyframes crownJiggle {
+    0%   { transform: rotate(0deg); }
+    2%   { transform: rotate(-10deg); }
+    4%   { transform: rotate(10deg); }
+    6%   { transform: rotate(-6deg); }
+    8%   { transform: rotate(4deg); }
+    10%  { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* S+ TIER - Blue Pulse */
+.tier-sp-diamond {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #58a6ff;
+    text-shadow:
+        0 0 2px #58a6ff,
+        0 0 4px #58a6ff;
+    animation: spPulseDiamond 2s ease-in-out infinite;
+    letter-spacing: 0.02em;
+}
+
+@keyframes spPulseDiamond {
+    0%, 100% {
+        text-shadow:
+            0 0 2px #58a6ff,
+            0 0 4px #58a6ff;
+    }
+    50% {
+        text-shadow:
+            0 0 4px #aefaff,
+            0 0 8px #d0ffff;
+    }
+}
+
+/* 💎 Diamond - now with a subtle icy pulse */
+.diamond {
+    display: inline-block;
+    font-size: 1rem;
+    transform-origin: bottom center;
+    animation:
+        diamondJiggle 4.4s ease-in-out infinite,
+        diamondPulse 2.6s ease-in-out infinite;
+    color: #ccf5ff;
+}
+
+@keyframes diamondJiggle {
+    0%   { transform: rotate(0deg); }
+    2%   { transform: rotate(-10deg); }
+    4%   { transform: rotate(10deg); }
+    6%   { transform: rotate(-6deg); }
+    8%   { transform: rotate(4deg); }
+    10%  { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes diamondPulse {
+    0%, 100% {
+        text-shadow: 0 0 2px #b0eaff;
+    }
+    50% {
+        text-shadow: 0 0 5px #ff80c2 ;
+    }
+}
+
+
+/* regular tiers */
+.tier-sp-diamond {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #aefaff;
+    text-shadow:
+        0 0 4px #aefaff,
+        0 0 10px #82e4f7,
+        0 0 16px #d0ffff;
+    animation: spPulseDiamond 1.6s ease-in-out infinite;
+    letter-spacing: 0.03em;
+}
+
+@keyframes spPulseDiamond {
+    0%, 100% {
+        text-shadow:
+            0 0 4px #aefaff,
+            0 0 10px #82e4f7,
+            0 0 16px #d0ffff;
+    }
+    50% {
+        text-shadow:
+            0 0 6px #aefaff,
+            0 0 14px #82e4f7,
+            0 0 24px #ffffff;
+    }
+}
+
+
+
+
+
+.tier-s {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #58a6ff;
+    text-shadow: 0 0 3px #58a6ff, 0 0 6px #58a6ff;
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 0 0 3px #58a6ff, 0 0 6px #58a6ff;
+    }
+    50% {
+        text-shadow: 0 0 6px #58a6ff, 0 0 12px #58a6ff;
+    }
+}
+
+
+.tier-a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #58a6ff;
+    text-shadow: 0 0 1px #58a6ff; /* very soft glow */
+}
+.tier-b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #58a6ff;
+    text-shadow: none;
+    opacity: 0.75;
+}
+
+
+.tier-q {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #999;
+    letter-spacing: 0.05em;
+    text-shadow:
+        -1px 0 #333,
+        1px 0 #ccc,
+        0 1px #666;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+

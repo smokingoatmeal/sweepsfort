@@ -1,0 +1,418 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #060c15;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  color: #007bff;
+  font-size: 2.2rem;
+  margin-bottom: 0.5em;
+  text-shadow: 0 0 6px #0059b3;
+}
+
+h2 {
+  color: #00aaff;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  border-bottom: 1px solid #1b2735;
+  padding-bottom: 0.3rem;
+}
+
+h3 {
+  color: #33bbff;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+}
+
+p {
+  line-height: 1.6;
+  margin: 1em 0;
+}
+
+img {
+  max-width: 100%;
+  border: 2px solid #00aaff;
+  border-radius: 8px;
+  margin: 1em 0;
+}
+
+.sidebar-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 220px;
+  background: #0a0f1f;
+  border-right: 2px solid #007bff;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  margin: 15px 0;
+}
+
+.sidebar-nav a {
+  color: #66cfff;
+  font-weight: bold;
+}
+
+.sidebar-nav a:hover {
+  color: #00aaff;
+  text-shadow: 0 0 8px #0059b3;
+}
+
+.guide-content {
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mobile-top-nav {
+  display: flex;
+  justify-content: space-around;
+  background: #0a0f1f;
+  padding: 10px;
+  border-bottom: 2px solid #007bff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.mobile-top-nav a {
+  color: #00aaff;
+  font-weight: bold;
+  background: rgba(0, 170, 255, 0.12);
+  padding: 6px 12px;
+  border-radius: 9999px;
+  box-shadow: 0 0 6px #0059b3;
+}
+
+details {
+  background: #0d1728;
+  border: 1px solid #007bff;
+  padding: 12px 16px;
+  margin: 1em 0;
+  border-radius: 8px;
+  color: #e0f7ff;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #00aaff;
+}
+
+details[open] {
+  box-shadow: 0 0 12px rgba(0, 204, 255, 0.2);
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 0 10px #007bff;
+  font-weight: bold;
+}
+
+#backToTop:hover {
+  background-color: #005bbd;
+}
+
+.nav-link.active {
+  color: #ffffff;
+  background: #007bff;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+@media (min-width: 768px) {
+  body {
+    flex-direction: row;
+  }
+
+  .sidebar-nav {
+    display: block;
+  }
+
+  .guide-content {
+    margin-left: 240px;
+    padding: 40px;
+  }
+
+  .mobile-top-nav {
+    display: none;
+  }
+}
+
+.social-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: none; /* removed pink border */
+  box-shadow: none; /* removed pink glow */
+  transition: transform 0.2s ease;
+}
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #00ccff; /* soft blue border */
+  box-shadow: 0 0 4px #00ccff; /* subtle blue glow */
+  transition: transform 0.2s ease;
+}
+
+}
+
+.social-img:hover {
+  transform: scale(1.1);
+}
+
+/* Sticky mobile logo + nav */
+.mobile-logo-img {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 12px;
+  background-color: #060c15;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  text-align: left !important;
+}
+
+.mobile-logo-img img {
+  max-height: 30px;
+  width: auto;
+  margin: 0;
+}
+
+
+.mobile-top-nav {
+  position: sticky;
+  top: 40px;
+  z-index: 1000;
+}
+
+/* Ensure social icons only show on desktop */
+@media (max-width: 767px) {
+  .social-icons {
+  display: none;
+  position: fixed;
+  bottom: 5px;
+  left: 20px;
+  z-index: 999;
+  font-family: monospace;
+  gap: 12px;
+  display: flex;
+}
+
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #00ccff;
+  text-decoration: none;
+  border-radius: 50%;
+  border: 2px solid #00ccff;
+  box-shadow: 0 0 12px #00ccff;
+  background-color: #060c15;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00ccff, 0 0 10px #00aaff;
+}
+.social-icons {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #00ccff;
+  box-shadow: 0 0 12px #00ccff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-icon-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00ccff, 0 0 10px #00aaff;
+}
+
+/* Only show on desktop */
+@media (min-width: 768px) {
+  .social-icons {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .social-icons {
+    display: none;
+  }
+}
+
+}
+/* Sticky mobile nav container frame */
+.mobile-nav-container {
+  position: sticky;
+  top: 0;
+  z-index: 1002;
+  background-color: #060c15;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+.logo-tagline {
+  color: #00ccff;
+  font-size: 0.75rem;
+  font-family: monospace;
+  margin-left: 10px;
+  opacity: 0.85;
+}
+.img-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+  align-items: center;
+  justify-content: center;
+}
+
+.img-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00aaff;
+}
+
+.img-modal .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2001;
+}
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 2em 0;
+}
+
+.image-grid img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #00aaff;
+  cursor: pointer;
+  flex: 1 1 calc(25% - 16px); /* 4 per row on wide screens */
+}
+
+@media (max-width: 1024px) {
+  .image-grid img {
+    flex: 1 1 calc(33.333% - 16px); /* 3 per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .image-grid img {
+    flex: 1 1 100%; /* stack images on mobile */
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* SweepsFort Top Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #000;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  z-index: 1000;
+  border-bottom: 1px solid #222;
+}
+
+.navbar-brand {
+  color: #00f6ff;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.85;
+}
+
+.navbar a {
+  color: #79c0ff;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+
+.navbar a:hover {
+  text-shadow: 0 0 6px #00f6ff;
+}
+
+/* Add top padding to body so content doesn't hide under fixed navbar */
+body {
+  padding-top: 70px;
+}
